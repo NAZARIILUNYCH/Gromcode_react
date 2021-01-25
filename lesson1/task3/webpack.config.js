@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'review_build'),
   },
   module: {
     rules: [
