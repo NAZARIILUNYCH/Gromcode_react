@@ -18,5 +18,3 @@ const searchField = props => {
 
   return element;
 };
-
-ReactDOM.render(<searchField name="Bob" />, rootElement);
