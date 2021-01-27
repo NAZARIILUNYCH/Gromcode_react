@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -26,9 +25,6 @@ module.exports = (env, argv) => {
           ],
         },
       ],
-    },
-    resolve: {
-      extensions: ['.js', '.jsx'],
     },
     plugins: [
       new webpack.ProgressPlugin(),
