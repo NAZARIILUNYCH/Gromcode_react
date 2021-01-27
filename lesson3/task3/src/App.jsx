@@ -9,3 +9,4 @@ const userInfo = {
 const App = () => <Comment user={userInfo} text="Good job!" data={new Date()} />;
 
 export default App;
+//
