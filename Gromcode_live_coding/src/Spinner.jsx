@@ -1,8 +1,13 @@
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 
+// input: props -> number
+// output: JSX
+
 const Spinner = ({ size }) => {
-  const style = { height: size, width: size };
+  const style = {
+    width: size,
+    height: size,
+  };
 
   return <span className="spinner" style={style}></span>;
 };

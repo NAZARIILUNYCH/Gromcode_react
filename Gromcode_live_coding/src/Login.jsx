@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 
-// input (props): function
+// input: props -> func
 // output: JSX
-const Login = ({ onLogin }) => {
+const Login = ({ onLogin }) => (
   <button className="login btn" onClick={onLogin}>
     Login
-  </button>;
-};
+  </button>
+);
 
 export default Login;

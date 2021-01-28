@@ -1,6 +1,6 @@
 import React from 'react';
 
-// input (props): function
+// input: props -> func
 // output: JSX
 const Logout = ({ onLogout }) => (
   <button className="logout btn" onClick={onLogout}>

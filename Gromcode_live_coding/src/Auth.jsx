@@ -1,14 +1,13 @@
-/* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
-import Login from './login';
-import Spinner from './Spinner';
-import Logout from './Logout';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
+import Spinner from './Spinner.jsx';
 
-// algo
-// 1. show Login by default +++++
-// 2. show Spinner after Login click & hide Login +++++
-// 3. show Logout after 2 sec, hide Spinner ++++++
-// 4. show Login after Logout & hide Logout ++++++
+// Algo
+// 1. show Login by default +++
+// 2. show Spinner after login click and hide login +++
+// 3. show Logout after 2sec, hide Spinner +++
+// 4. show Login after Logout click and hide Logout
 
 class Auth extends Component {
   constructor(props) {
@@ -36,13 +35,6 @@ class Auth extends Component {
     this.setState({
       isLoggedIn: false,
     });
-
-    setTimeout(() => {
-      this.setState({
-        isLoggedIn: true,
-        isProcessing: false,
-      });
-    }, 2000);
   };
 
   render() {
@@ -53,7 +45,7 @@ class Auth extends Component {
     }
 
     if (isLoggedIn) {
-      return <Logout onLogout={this.logoutHandler}></Logout>;
+      return <Logout onLogout={this.logoutHandler} />;
     }
 
     return <Login onLogin={this.loginHandler} />;
