@@ -5,15 +5,15 @@ import moment from 'moment';
 import App from './App';
 
 const Profile = props => {
-  const dateFormater = moment(props.birthDate).format('DD MMM YY');
+  const dateFormater = moment(props.userData.birthDate).format('DD MMM YY');
 
   return (
     <div className="profile__box">
       <div className="profile__name">
-        {props.firstName} {props.lastName}
+        {props.userData.firstName} {props.userData.lastName}
       </div>
       <div className="profile__birth">
-        Was born {dateFormater} in {props.birthPlace}
+        Was born {dateFormater} in {props.userData.birthPlace}
       </div>
     </div>
   );
