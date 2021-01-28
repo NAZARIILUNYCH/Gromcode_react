@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-const counter = 0;
-
 class Counter extends Component {
   constructor() {
     super();
     this.state = {
-      counter: 0,
+      counter: 17,
     };
 
     setInterval(() => {
@@ -17,7 +15,7 @@ class Counter extends Component {
   }
 
   render() {
-    return <div>{this.state.counter}</div>;
+    return <div className="counter">{this.state.counter}</div>;
   }
 }
 

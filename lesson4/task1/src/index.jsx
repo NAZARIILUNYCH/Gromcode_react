@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './counter.scss';
 import './index.scss';
 import App from './App';
 
