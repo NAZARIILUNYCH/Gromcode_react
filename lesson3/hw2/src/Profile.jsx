@@ -12,7 +12,9 @@ const Profile = props => {
       <div className="profile__name">
         {props.firstName} {props.lastName}
       </div>
-      <div className="profile__birth">Was born {dateFormater} in London</div>
+      <div className="profile__birth">
+        Was born {dateFormater} in {props.birthPlace}
+      </div>
     </div>
   );
 };
