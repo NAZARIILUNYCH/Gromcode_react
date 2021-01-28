@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile__box {
+  display: flex;
+  flex-direction: column;
+  margin: 400px auto;
+  width: 300px;
+  height: 50px;
+  border: 3px solid grey;
+}
+
+.profile__name {
+  text-align: center;
+}
+
+.profile__birth {
+  text-align: center;
+}
