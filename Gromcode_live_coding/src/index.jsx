@@ -7,4 +7,3 @@ import Auth from './Auth';
 const rootElement = document.querySelector('#root');
 
 ReactDOM.render(<Auth />, rootElement);
-//
