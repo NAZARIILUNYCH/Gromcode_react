@@ -17,19 +17,13 @@ const getTimeWithOffset = offset => {
   return new Date(currentTime.setHours(currentTime.getHours() + offset + utcOffset));
 };
 
-console.log(getTimeWithOffset('New York'));
-
-const Clock = props => {
-  const { location } = props;
-
-  return (
-    <>
-      <div className="clock">
-        <div className="clock__location">{props.location}</div>
-        <div className="clock__time">{}</div>
-      </div>
-    </>
-  );
-};
+const Clock = props => (
+  <>
+    <div className="clock">
+      <div className="clock__location">{props.location}</div>
+      <div className="clock__time">{}</div>
+    </div>
+  </>
+);
 
 export default Clock;
