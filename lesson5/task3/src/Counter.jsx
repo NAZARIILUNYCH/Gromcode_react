@@ -1,5 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
 
 class Counter extends Component {
