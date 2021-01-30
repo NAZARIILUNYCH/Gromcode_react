@@ -4,12 +4,12 @@ class Toggler extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'off',
+      value: 'Off',
     };
   }
 
   changeBtn = () =>
-    this.state.value === 'off' ? this.setState({ value: 'on' }) : this.setState({ value: 'off' });
+    this.state.value === 'Off' ? this.setState({ value: 'On' }) : this.setState({ value: 'Off' });
 
   render() {
     return (
