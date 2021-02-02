@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import User from './User';
 
-class UserList extends Component {
+class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,14 +19,14 @@ class UserList extends Component {
   };
 
   render() {
-    let UsersList;
+    let UserList;
 
     if (this.state.sorting) {
-      UsersList = this.props.users
+      UserList = this.props.users
         .slice()
         .sort((a, b) => (this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age));
     } else {
-      UsersList = this.props.users;
+      UserList = this.props.users;
     }
 
     console.log(this.props.users);
@@ -38,7 +38,7 @@ class UserList extends Component {
         </button>
 
         <ul className="users">
-          {UsersList.map(user => (
+          {UserList.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
@@ -47,4 +47,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default UsersList;
