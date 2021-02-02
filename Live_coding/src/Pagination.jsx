@@ -18,3 +18,4 @@ function Pagination({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) {
 }
 
 export default Pagination;
+//
