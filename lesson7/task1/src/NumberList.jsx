@@ -2,8 +2,8 @@ import React from 'react';
 
 const NumberList = ({ numbers }) => (
   <div>
-    {numbers.map(nums => (
-      <li key={nums}>{nums}</li>
+    {numbers.map(Login => (
+      <li key={Login}>{Login}</li>
     ))}
   </div>
 );
