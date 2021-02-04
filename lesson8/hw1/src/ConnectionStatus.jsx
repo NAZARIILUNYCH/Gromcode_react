@@ -5,19 +5,19 @@ class ConnectionStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: true,
+      status: null,
     };
   }
 
-  onlineStatus = () => {
+  handleOnline = () => {
     this.setState({
-      status: true,
+      status: 'online',
     });
   };
 
-  offlineStatus = () => {
+  handleOffline = () => {
     this.setState({
-      status: false,
+      status: 'offline',
     });
   };
 
@@ -32,11 +32,10 @@ class ConnectionStatus extends Component {
   }
 
   render() {
-    return this.state.status ? (
-      <div className="status">online</div>
-    ) : (
-      <div className="status status_offline">offline</div>
-    );
+    const { status } = this.state;
+    const className = `status ${status === 'offline' ? 'status_offline' : ''}`;
+
+    return <div className={className}>{status}</div>;
   }
 }
 
