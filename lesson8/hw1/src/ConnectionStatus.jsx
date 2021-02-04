@@ -9,21 +9,21 @@ class ConnectionStatus extends Component {
     };
   }
 
+  onlineStatus = () => {
+    this.setState({
+      status: true,
+    });
+  };
+
+  offlineStatus = () => {
+    this.setState({
+      status: false,
+    });
+  };
+
   componentDidMount() {
-    const onlineStatus = () => {
-      this.setState({
-        status: true,
-      });
-    };
-
-    const offlineStatus = () => {
-      this.setState({
-        status: false,
-      });
-    };
-
-    window.addEventListener('online', onlineStatus);
-    window.addEventListener('offline', offlineStatus);
+    window.addEventListener('online', this.onlineStatus);
+    window.addEventListener('offline', this.offlineStatus);
   }
 
   componentWillUnmount() {
