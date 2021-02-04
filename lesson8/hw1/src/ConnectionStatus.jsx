@@ -5,20 +5,20 @@ class ConnectionStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: 'online',
+      status: true,
     };
   }
 
   componentDidMount() {
     const onlineStatus = () => {
       this.setState({
-        status: 'online',
+        status: true,
       });
     };
 
     const offlineStatus = () => {
       this.setState({
-        status: 'offline',
+        status: false,
       });
     };
 
@@ -32,11 +32,11 @@ class ConnectionStatus extends Component {
   }
 
   render() {
-    if (navigator.onLine) {
-      return <div className="status">{this.state.status}</div>;
-    }
-
-    return <div className="status status_offline">{this.state.status}</div>;
+    return this.state.status ? (
+      <div className="status">online</div>
+    ) : (
+      <div className="status status_offline">offline</div>
+    );
   }
 }
 
