@@ -5,7 +5,7 @@ class ConnectionStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: null,
+      status: 'online',
     };
   }
 
@@ -22,13 +22,13 @@ class ConnectionStatus extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('online', this.onlineStatus);
-    window.addEventListener('offline', this.offlineStatus);
+    window.addEventListener('online', this.handleOnline);
+    window.addEventListener('offline', this.handleOffline);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('online', this.onlineStatus);
-    window.removeEventListener('offline', this.offlineStatus);
+    window.removeEventListener('online', this.handleOnline);
+    window.removeEventListener('offline', this.handleOffline);
   }
 
   render() {
