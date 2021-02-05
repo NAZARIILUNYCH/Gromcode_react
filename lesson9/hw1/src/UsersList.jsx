@@ -7,7 +7,7 @@ class UsersList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: null,
+      value: '',
     };
   }
 
@@ -18,15 +18,12 @@ class UsersList extends Component {
   };
 
   render() {
-    const { users } = this.props;
-
-    const usersList =
-      this.state.value === ''
-        ? users
-        : users
-            .filter(user => user.name.toLowerCase().includes(this.state.value))
-            .map(el => <User key={el.id} {...el} />);
-
+    const usersList = (this.state.value === ''
+      ? this.props.users
+      : this.props.users.filter(user =>
+          user.name.toLowerCase().includes(this.state.value.toLowerCase()),
+        )
+    ).map(el => <User key={el.id} {...el} />);
     return (
       <div>
         <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
