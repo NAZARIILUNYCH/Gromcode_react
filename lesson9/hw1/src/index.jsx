@@ -5,11 +5,6 @@ import Filter from './Filter';
 import './index.scss';
 import UsersList from './UsersList';
 
-// algo
-// 1. iterate the array with users +++++
-// 2. filter an array
-// 3. show all users, and show count of users
-
 const rootElement = document.querySelector('#root');
 
 const users = [

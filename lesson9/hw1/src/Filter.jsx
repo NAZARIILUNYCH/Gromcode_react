@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Show counter find users & input text field
 const Filter = ({ filterText, count, onChange }) => (
   <div className="filter">
     <span className="filter__count">{count}</span>

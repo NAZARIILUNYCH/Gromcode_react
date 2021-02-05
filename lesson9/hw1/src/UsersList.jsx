@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Filter from './Filter';
 import User from './User';
 
-// Show filter field & list of users
 class UsersList extends Component {
   constructor(props) {
     super(props);
@@ -30,8 +29,10 @@ class UsersList extends Component {
 
     return (
       <div>
-        <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
-        <ul className="users">{usersList}</ul>
+        <ul className="users">
+          <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
+          {usersList}
+        </ul>
       </div>
     );
   }
