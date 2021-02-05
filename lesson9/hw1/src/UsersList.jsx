@@ -29,10 +29,8 @@ class UsersList extends Component {
 
     return (
       <div>
-        <ul className="users">
-          <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
-          {usersList}
-        </ul>
+        <Filter filterText={this.state.value} count={usersList.length} onChange={this.onChange} />
+        <ul className="users">{usersList}</ul>
       </div>
     );
   }
