@@ -24,10 +24,12 @@ class Page extends Component {
   };
 
   render() {
+    const { userData } = this.state;
+
     return (
       <div className="page">
         <h1 className="title">
-          Hello, {this.state.userData.firstName} {this.state.userData.lastName}
+          Hello, {userData.firstName} {userData.lastName}
         </h1>
         <main className="content">
           <ShopingCart userData={this.state.userData} />
