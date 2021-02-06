@@ -34,7 +34,6 @@ class Page extends Component {
         <main className="content">
           <ShoppingCart userData={this.state.userData} />
           <Profile userData={this.state.userData} handleChange={this.handleChange} />
-          <button>Search</button>
         </main>
       </div>
     );
