@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShopingCart from './ShopingCart';
+import ShoppingCart from './ShoppingCart';
 import Profile from './Profile';
 
 class Page extends Component {
@@ -32,8 +32,9 @@ class Page extends Component {
           Hello, {userData.firstName} {userData.lastName}
         </h1>
         <main className="content">
-          <ShopingCart userData={this.state.userData} />
+          <ShoppingCart userData={this.state.userData} />
           <Profile userData={this.state.userData} handleChange={this.handleChange} />
+          <button>Search</button>
         </main>
       </div>
     );
