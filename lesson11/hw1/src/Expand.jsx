@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ExpandContent from './ExpandContent';
 import Arrow from './Arrow';
+import PropTypes from 'prop-types';
 
 class Expand extends Component {
   state = {
@@ -28,5 +29,16 @@ class Expand extends Component {
     );
   }
 }
+
+Expand.propTypes = {
+  isOpen: PropTypes.bool,
+  children: PropTypes.element,
+  title: PropTypes.string,
+  handleBtn: PropTypes.func,
+};
+
+Expand.defaultProps = {
+  isOpen: false,
+};
 
 export default Expand;
