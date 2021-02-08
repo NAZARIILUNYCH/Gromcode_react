@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ExpandContent from './ExpandContent';
 import Arrow from './Arrow';
-import PropTypes from 'prop-types';
 
 class Expand extends Component {
   state = {
@@ -21,24 +20,17 @@ class Expand extends Component {
         <div className="expand__header">
           <span className="expand__title">{title}</span>
           <button className="expand__toggle-btn" onClick={this.handleBtn}>
-            <Arrow isOpen={this.state.isOpen} />
+            {this.state.isOpen ? (
+              <i className="fas fa-chevron-up"></i>
+            ) : (
+              <i className="fas fa-chevron-down"></i>
+            )}
           </button>
         </div>
-        <ExpandContent children={children} isOpen={this.state.isOpen} />
+        {this.state.isOpen ? <div className="expand__content">{children}</div> : null}
       </div>
     );
   }
 }
-
-Expand.propTypes = {
-  isOpen: PropTypes.bool,
-  children: PropTypes.element,
-  title: PropTypes.string,
-  handleBtn: PropTypes.func,
-};
-
-Expand.defaultProps = {
-  isOpen: false,
-};
 
 export default Expand;
