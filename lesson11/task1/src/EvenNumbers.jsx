@@ -7,9 +7,9 @@ class EvenNumbers extends Component {
 
   render() {
     return (
-      <div class="number">
-        <span class="number__title">{this.props.title}</span>
-        <span class="number__value">{this.props.number}</span>
+      <div className="number">
+        <span className="number__title">{this.props.title}</span>
+        <span className="number__value">{this.props.number}</span>
       </div>
     );
   }
