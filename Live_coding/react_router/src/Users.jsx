@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import User from './User';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+import User from './User.jsx';
 
 const Users = ({ match }) => {
   return (
@@ -16,10 +16,9 @@ const Users = ({ match }) => {
             <Link to={`${match.path}/facebook`}>Facebook</Link>
           </li>
         </ul>
-
         <Switch>
-          <Route path={`${match.path}/:userId`} component={User}></Route>
-          <Route path={match.path}>
+          <Route path={`${match.path}/:userId`} component={User} />
+          <Route exact path={`${match.path}`}>
             <span>Select a user please</span>
           </Route>
         </Switch>
