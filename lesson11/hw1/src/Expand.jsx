@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ExpandContent from './ExpandContent';
-import Arrow from './Arrow';
 
 class Expand extends Component {
   state = {
