@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const User = () => (
   <div className="user">
     <img
       alt="User Avatar"
-      src="https://avatars1.githubusercontent.com/u/9919?v=4"
+      src="https://avatars.githubusercontent.com/u/9919?v=4"
       className="user__avatar"
     />
     <div className="user__info">

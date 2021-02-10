@@ -1,7 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-
-import User from './User.jsx';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import User from './User';
 
 const Users = ({ match }) => (
   <Router>
