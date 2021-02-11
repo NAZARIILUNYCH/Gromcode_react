@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import Dimension from './Dimension';
+import Dimensions from './Dimensions';
 
-const App = () => <Dimension />;
+const App = () => <Dimensions />;
 
 export default App;
