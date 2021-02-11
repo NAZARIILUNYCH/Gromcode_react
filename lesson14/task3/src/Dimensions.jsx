@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 import React, { useEffect, useState } from 'react';
 
-const Dimensions = () => {
+const Dimension = () => {
   const [dimensions, setDimensions] = useState({
     width: null,
     height: null,
@@ -26,4 +26,4 @@ const Dimensions = () => {
   return <div>{`${width}px - ${height}px`}</div>;
 };
 
-export default Dimensions;
+export default Dimension;
