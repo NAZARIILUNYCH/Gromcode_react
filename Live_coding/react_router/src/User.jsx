@@ -1,60 +1,51 @@
 /* eslint-disable camelcase */
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-class User extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userAvatar: null,
-      userName: null,
-      userLocation: null,
-    };
-  }
+const User = () => {
+  // input: init state
+  // output: array (state value, function to update state)
+  const [userInfo, setUserInfo] = useState({
+    avatar: null,
+    name: null,
+    location: null,
+  });
 
-  componentDidMount() {
-    this.getUserData(this.props.match.params.userId);
-  }
+  const { userId } = useParams();
 
-  componentDidUpdate(prevProps) {
-    const curUserId = this.props.match.params.userId;
-    if (prevProps.match.params.userId !== curUserId) {
-      this.getUserData(curUserId);
-    }
-  }
-
-  getUserData = userId => {
-    // input: userId
-    // output: promise or undefined
+  // callback
+  // input: func/array
+  // output: undefined
+  useEffect(() => {
     fetch(`https://api.github.com/users/${userId}`)
       .then(response => response.json())
       .then(userData => {
         const { avatar_url, name, location } = userData;
 
-        this.setState({
-          userAvatar: avatar_url,
-          userName: name,
-          userLocation: location,
+        setUserInfo({
+          avatar: avatar_url,
+          name,
+          location,
         });
       });
     // TODO make error handling
-  };
+  }, [userId]);
 
-  render() {
-    const { userAvatar, userName, userLocation } = this.state;
+  const { avatar, name, location } = userInfo;
 
-    if (!userAvatar || !userName || !userLocation) {
-      return null;
-    }
-    return (
-      <div className="user">
-        <img alt="User Avatar" src={userAvatar} className="user__avatar" />
-        <div className="user__info">
-          <span className="user__name">{userName}</span>
-          <span className="user__location">{userLocation}</span>
-        </div>
-      </div>
-    );
+  if (!avatar || !name || !location) {
+    return null;
   }
-}
+
+  return (
+    <div className="user">
+      <img alt="User Avatar" src={avatar} className="user__avatar" />
+      <div className="user__info">
+        <span className="user__name">{name}</span>
+        <span className="user__location">{location}</span>
+      </div>
+    </div>
+  );
+};
 
 export default User;
